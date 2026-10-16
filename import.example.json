@@ -1,0 +1,7 @@
+{
+  "records": [
+    {"source": "metricool", "id": "SUBSTITUA-ID-POST", "title": "SUBSTITUA pelo título real", "views": 0, "likes": 0, "comments": 0, "shares": 0},
+    {"source": "shop", "id": "SUBSTITUA-ID-PEDIDO", "title": "SUBSTITUA pelo produto real", "revenue": 0},
+    {"source": "affiliate", "id": "SUBSTITUA-ID-CONVERSAO", "title": "SUBSTITUA pelo produto real", "commission": 0}
+  ]
+}
