@@ -4,6 +4,7 @@ import os
 import threading
 import time
 import urllib.request
+import urllib.error
 from datetime import datetime, timezone
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
@@ -43,8 +44,17 @@ def telegram(message):
             result = json.load(response)
         if not result.get('ok'):
             raise ValueError('Telegram recusou a mensagem. Verifique as credenciais.')
-    except Exception:
-        raise ValueError('Falha ao enviar ao Telegram. Verifique credenciais e conexão.') from None
+    except urllib.error.HTTPError as error:
+        messages = {
+            401: 'Token do Telegram inválido. Confira telegram_token em config.json.',
+            404: 'Endpoint do bot não encontrado. Confira o formato do token.',
+            400: 'Telegram recusou o destino ou os dados. Confira telegram_chat_id e envie /start ao seu bot.',
+            403: 'O bot não tem permissão para enviar. Desbloqueie o bot e envie /start; em grupos, confira as permissões.',
+            429: 'Limite de mensagens do Telegram atingido. Aguarde antes de tentar novamente.'
+        }
+        raise ValueError(messages.get(error.code, f'Telegram respondeu HTTP {error.code}. Tente novamente mais tarde.')) from None
+    except (urllib.error.URLError, TimeoutError, OSError):
+        raise ValueError('Não foi possível conectar ao Telegram. Confira internet, proxy, VPN e certificados HTTPS.') from None
 
 
 def validate(data):
