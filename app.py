@@ -1,4 +1,5 @@
 import json
+import argparse
 import os
 import threading
 import time
@@ -161,6 +162,18 @@ class Handler(BaseHTTPRequestHandler):
 
 
 if __name__ == '__main__':
+    parser = argparse.ArgumentParser(description='Elli Monitor local')
+    parser.add_argument('--port', type=int, default=8765)
+    args = parser.parse_args()
+    if not 1 <= args.port <= 65535:
+        parser.error('A porta deve estar entre 1 e 65535.')
+    server = ThreadingHTTPServer(('127.0.0.1', args.port), Handler)
     threading.Thread(target=worker, daemon=True).start()
-    print('Elli Monitor: http://127.0.0.1:8765 — Ctrl+C para encerrar', flush=True)
-    ThreadingHTTPServer(('127.0.0.1', 8765), Handler).serve_forever()
+    print(f'Elli Monitor: http://127.0.0.1:{args.port} — Ctrl+C para encerrar', flush=True)
+    try:
+        server.serve_forever()
+    except KeyboardInterrupt:
+        print('\nElli Monitor encerrado.')
+    finally:
+        server.server_close()
+
