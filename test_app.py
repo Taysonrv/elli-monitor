@@ -38,6 +38,17 @@ class MonitorTests(unittest.TestCase):
             app.ingest({'records': [{'source': 'shop', 'id': 'x', 'revenue': -1}]})
         self.assertFalse((app.ROOT / 'data.json').exists())
 
+    def test_telegram_error_hides_token(self):
+        app.save('config.json', {'telegram_token': 'SECRET', 'telegram_chat_id': '123'})
+        for status, expected in [(401, 'inválido'), (400, 'chat_id'), (403, 'permissão')]:
+            failure = app.urllib.error.HTTPError('https://example.com/SECRET', status, 'failure', {}, None)
+            with patch.object(app.urllib.request, 'urlopen', side_effect=failure):
+                with self.assertRaises(ValueError) as caught:
+                    app.telegram('teste')
+                self.assertIn(expected, str(caught.exception))
+                self.assertNotIn('SECRET', str(caught.exception))
+
 
 if __name__ == '__main__':
     unittest.main()
+
