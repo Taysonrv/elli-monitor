@@ -141,11 +141,12 @@ class Handler(BaseHTTPRequestHandler):
                     'telegram': bool(cfg.get('telegram_enabled') and
                         (cfg.get('telegram_token') or os.environ.get('TELEGRAM_BOT_TOKEN')) and
                         (cfg.get('telegram_chat_id') or os.environ.get('TELEGRAM_CHAT_ID')))})
-        elif self.path in ('/', '/index.html'):
+        elif self.path in ('/', '/index.html', '/studio', '/studio.html'):
             self.send_response(200)
             self.send_header('Content-Type', 'text/html; charset=utf-8')
             self.end_headers()
-            self.wfile.write((ROOT / 'index.html').read_bytes())
+            page = 'studio.html' if self.path in ('/studio', '/studio.html') else 'index.html'
+            self.wfile.write((ROOT / page).read_bytes())
         else:
             self.reply(404, {'error': 'Não encontrado'})
 
@@ -186,4 +187,3 @@ if __name__ == '__main__':
         print('\nElli Monitor encerrado.')
     finally:
         server.server_close()
-
