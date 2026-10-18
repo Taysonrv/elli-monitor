@@ -1,5 +1,6 @@
 import json
 import argparse
+from narration import synthesize
 import os
 import threading
 import time
@@ -160,7 +161,11 @@ class Handler(BaseHTTPRequestHandler):
             if not 0 < length <= 2_000_000:
                 raise ValueError('Tamanho inválido')
             payload = json.loads(self.rfile.read(length))
-            if self.path == '/api/import':
+            if self.path == '/api/narration':
+                if not isinstance(payload, dict):
+                    raise ValueError('Envie um objeto com o texto da narração.')
+                self.reply(200, synthesize(payload.get('text')))
+            elif self.path == '/api/import':
                 ingest(payload)
                 self.reply(200, {'message': 'Dados importados. Alertas disponíveis no painel; Telegram processado em até 30 segundos.'})
             elif self.path == '/api/test-telegram':
