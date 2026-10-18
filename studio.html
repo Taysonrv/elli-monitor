@@ -6,8 +6,8 @@
 <aside><div class="logo">elli<span>studio.</span></div><div class="sub">CRIAR · PROGRAMAR · CRESCER</div><a class="nav active" href="/studio">✦ &nbsp; Criar vídeo</a><a class="nav" href="/">▦ &nbsp; Acompanhamento</a><div class="account">ES &nbsp; Espaço da Elly<br>Afiliados TikTok<br><span style="color:#b2a5d3">Versão inicial do estúdio</span></div></aside>
 <main><div class="top"><span>Seu estúdio / Novo vídeo</span><span class="badge">TikTok · conexão pendente</span></div><h1>Uma foto. Seu próximo vídeo.</h1><p>Transforme a imagem do produto em uma ideia pronta para ganhar movimento.</p><div class="steps"><span class="on"><b>1</b>Produto</span><span><b>2</b>Vídeo</span><span><b>3</b>Programação</span></div>
 <form id="creator"><div class="layout"><div><section class="panel"><h2>01 &nbsp; Comece pelo produto</h2><p class="caption">Envie uma foto e conte o que vamos apresentar.</p><label class="drop" id="drop"><span class="upload-icon">↥</span><strong id="filename">Arraste sua foto ou clique para selecionar</strong><small>JPG, PNG ou WebP · até 10 MB</small><input id="photo" type="file" accept="image/jpeg,image/png,image/webp" hidden></label><div class="fields"><label class="field">Nome do produto<input id="product" maxlength="90" required placeholder="Ex.: Organizador de maquiagem"></label><label class="field">Preço (opcional)<input id="price" type="number" min="0" step="0.01" placeholder="R$ 0,00"></label><label class="field wide">O que você quer destacar?<textarea id="benefit" maxlength="500" placeholder="Descreva benefícios reais e características do produto."></textarea></label><label class="field wide">Link do produto (opcional)<input id="link" type="url" placeholder="https://..."></label></div></section>
-<section class="panel"><h2>02 &nbsp; Dê seu estilo ao vídeo</h2><p class="caption">Escolha a direção visual para a prévia.</p><div class="options" role="group" aria-label="Estilo do vídeo"><button class="option selected" type="button" data-style="Destaque">✦ &nbsp; Destaque</button><button class="option" type="button" data-style="Minimalista">◯ &nbsp; Minimalista</button><button class="option" type="button" data-style="Oferta">↗ &nbsp; Oferta</button></div><div class="fields"><label class="field">Formato<select disabled><option>Vertical · 9:16</option></select></label><label class="field">Duração desejada<select id="duration"><option value="15">15 segundos</option><option value="30">30 segundos</option></select></label><label class="field wide">Texto da chamada<input id="cta" maxlength="90" value="Confira o produto na minha vitrine"></label></div><div class="info">Gere um anúncio vertical de 1080 × 1920 com quatro cenas, zoom, panorâmicas, transições e textos animados. Sem áudio nesta etapa. O arquivo será MP4 quando o navegador permitir, ou WebM. Mantenha esta aba visível durante a geração.</div></section>
-<section class="panel"><div class="row"><h2>03 &nbsp; Planeje a publicação</h2><span class="pill">Integração pendente</span></div><div class="fields"><label class="field">Data e hora desejadas<input id="schedule" type="datetime-local"></label><label class="field">Canal<select disabled><option>TikTok · via Buffer</option></select></label></div><div class="info">A data é salva no rascunho, no horário de São Paulo. Não agenda nem publica ainda. A conexão oficial e o vínculo ao produto de afiliado precisam ser implementados.</div></section><section class="panel"><h2>Exportar vídeo</h2><p class="caption">Arquivo gerado no seu navegador, sem enviar sua foto a um serviço externo.</p><div class="row"><button class="primary" id="render" type="button">Gerar vídeo para baixar</button><button class="secondary" id="cancelRender" type="button" hidden>Cancelar</button></div><progress id="renderProgress" max="100" value="0" hidden style="width:100%;margin:18px 0" aria-label="Progresso da geração"></progress><video id="renderResult" controls playsinline hidden style="max-height:420px;width:100%;margin-top:18px;border-radius:12px;background:#252638"></video><a id="downloadVideo" class="primary" hidden style="text-decoration:none;margin-top:15px" download>Baixar vídeo</a><p id="renderStatus" class="message" role="status" aria-live="polite"></p></section><div class="bottom"><button class="secondary" type="button" id="save">Salvar rascunho</button><button class="primary" type="submit">✦ &nbsp; Visualizar ideia</button></div><p id="message" class="message" role="status" aria-live="polite"></p></div>
+<section class="panel"><h2>02 &nbsp; Dê seu estilo ao vídeo</h2><p class="caption">Escolha a direção visual para a prévia.</p><div class="options" role="group" aria-label="Estilo do vídeo"><button class="option selected" type="button" data-style="Destaque">✦ &nbsp; Destaque</button><button class="option" type="button" data-style="Minimalista">◯ &nbsp; Minimalista</button><button class="option" type="button" data-style="Oferta">↗ &nbsp; Oferta</button></div><div class="fields"><label class="field">Formato<select disabled><option>Vertical · 9:16</option></select></label><label class="field">Duração desejada<select id="duration"><option value="15">15 segundos</option><option value="30">30 segundos</option></select></label><label class="field wide">Texto da chamada<input id="cta" maxlength="90" value="Confira o produto na minha vitrine"></label></div><div class="info">Gere um anúncio vertical de 1080 × 1920 com quatro cenas, zoom, panorâmicas, transições e textos animados. Com narração e trilha opcionais. O arquivo será MP4 quando o navegador permitir, ou WebM. Mantenha esta aba visível durante a geração.</div></section>
+<section class="panel"><div class="row"><h2>03 &nbsp; Planeje a publicação</h2><span class="pill">Integração pendente</span></div><div class="fields"><label class="field">Data e hora desejadas<input id="schedule" type="datetime-local"></label><label class="field">Canal<select disabled><option>TikTok · via Buffer</option></select></label></div><div class="info">A data é salva no rascunho, no horário de São Paulo. Não agenda nem publica ainda. A conexão oficial e o vínculo ao produto de afiliado precisam ser implementados.</div></section><section class="panel"><h2>Som e narração</h2><p class="caption">Voz automática do Windows ou seu próprio áudio, com trilha instrumental gerada localmente.</p><div class="fields"><label class="field">Narração<select id="voiceMode"><option value="auto">Voz automática em português</option><option value="file">Usar meu arquivo de áudio</option><option value="none">Sem narração</option></select></label><label class="field">Música de fundo<select id="musicMode"><option value="on">Trilha instrumental suave</option><option value="off">Sem música</option></select></label><label class="field wide">Texto da chamada e narração<textarea id="narrationText" maxlength="700" placeholder="Ex.: Conheça o organizador de maquiagem. Descreva aqui o benefício real e finalize com uma chamada para sua vitrine."></textarea></label><label class="field wide">Seu áudio (opcional, até 15 MB)<input id="voiceFile" type="file" accept="audio/*"></label></div><div class="actions"><button class="secondary" id="suggestNarration" type="button">Montar texto com os dados do produto</button><button class="secondary" id="listenNarration" type="button">Ouvir narração</button></div><audio id="voicePlayer" controls hidden style="width:100%;margin-top:15px"></audio><p id="voiceStatus" class="message" role="status" aria-live="polite"></p><div class="info">A voz automática depende de uma voz em português instalada no Windows. A fala deve caber na duração escolhida; o sistema avisa se for longa demais. Revise o texto antes de gerar. A prévia animada é visual; o vídeo exportado inclui o áudio.</div></section><section class="panel"><h2>Exportar vídeo</h2><p class="caption">Arquivo gerado no seu navegador, sem enviar sua foto a um serviço externo.</p><div class="row"><button class="primary" id="render" type="button">Gerar vídeo para baixar</button><button class="secondary" id="cancelRender" type="button" hidden>Cancelar</button></div><progress id="renderProgress" max="100" value="0" hidden style="width:100%;margin:18px 0" aria-label="Progresso da geração"></progress><video id="renderResult" controls playsinline hidden style="max-height:420px;width:100%;margin-top:18px;border-radius:12px;background:#252638"></video><a id="downloadVideo" class="primary" hidden style="text-decoration:none;margin-top:15px" download>Baixar vídeo</a><p id="renderStatus" class="message" role="status" aria-live="polite"></p></section><div class="bottom"><button class="secondary" type="button" id="save">Salvar rascunho</button><button class="primary" type="submit">✦ &nbsp; Visualizar ideia</button></div><p id="message" class="message" role="status" aria-live="polite"></p></div>
 <div><section class="panel preview"><h2>Seu vídeo começa aqui</h2><p class="caption">Anúncio com 4 cenas · mesma animação na exportação</p><div class="phone" id="phone"><img id="image" alt="Foto do produto na prévia"><div class="placeholder" id="placeholder">✧</div><div class="phone-top">Para você &nbsp; ━</div><div class="overlay"><small>SELEÇÃO DA ELLY</small><h3 id="previewTitle">Seu produto em destaque</h3><p id="previewBenefit">Uma nova ideia merece aparecer.</p><small id="previewCta">Confira o produto na minha vitrine</small></div></div><p class="preview-note">9:16 &nbsp; • &nbsp; <span id="previewDuration">15</span>s desejados</p><button class="secondary" id="animate" type="button" style="width:100%">▷ Assistir prévia do anúncio</button><div class="info">Use fotos próprias ou autorizadas. Confira informações e preço antes de publicar.</div></section><section class="panel"><h2>Seus rascunhos</h2><p class="caption">Salvos neste navegador, sem upload.</p><div id="drafts"></div><button type="button" class="secondary" id="clear" style="margin-top:12px">Limpar rascunhos</button></section></div></div></form></main>
 <script>
 const $=id=>document.getElementById(id);let style='Destaque',imageURL=null;const key='elli-studio-drafts-v1';
@@ -95,33 +95,82 @@ function previewAd(){
   function frame(now){const p=Math.min((now-start)/(seconds*1000),1);paintVideo(ctx,image,data,p);if(p<1)previewFrame=requestAnimationFrame(frame);else{previewRunning=false;$('animate').textContent='↻ Repetir prévia do anúncio';}}
   previewFrame=requestAnimationFrame(frame);
 }
+
+let voiceURL=null;
+function narrationScript(){return [$('product').value?'Conheça '+$('product').value+'.':'',$('benefit').value,$('price').value?'Preço informado: '+Number($('price').value).toLocaleString('pt-BR',{style:'currency',currency:'BRL'})+'.':'',$('cta').value].filter(Boolean).join(' ');}
+$('suggestNarration').onclick=()=>{$('narrationText').value=narrationScript();$('voiceStatus').textContent='Texto montado com os dados preenchidos. Revise antes de usar.';};
+async function narrationBytes(){
+  if($('voiceMode').value==='none')return null;
+  if($('voiceMode').value==='file'){
+    const file=$('voiceFile').files[0];if(!file)throw Error('Selecione um arquivo para a narração.');
+    if(file.size>15*1024*1024)throw Error('O arquivo de narração deve ter até 15 MB.');
+    return {bytes:await file.arrayBuffer(),type:file.type||'audio/wav'};
+  }
+  const text=$('narrationText').value.trim()||narrationScript();if(!text.trim())throw Error('Preencha o texto da narração.');
+  const response=await fetch('/api/narration',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({text})});
+  const data=await response.json();if(!response.ok)throw Error(data.error||'Falha ao preparar a voz.');
+  return {bytes:Uint8Array.from(atob(data.audio),c=>c.charCodeAt(0)).buffer,type:data.mime};
+}
+$('listenNarration').onclick=async()=>{
+  const button=$('listenNarration');button.disabled=true;$('voiceStatus').textContent='Preparando narração…';
+  try{const result=await narrationBytes();if(!result)throw Error('Escolha uma opção de narração.');
+    if(voiceURL)URL.revokeObjectURL(voiceURL);voiceURL=URL.createObjectURL(new Blob([result.bytes],{type:result.type}));
+    $('voicePlayer').src=voiceURL;$('voicePlayer').hidden=false;$('voiceStatus').textContent='Áudio pronto. Use o player para ouvir e revisar.';
+  }catch(error){$('voiceStatus').textContent=error.message;}finally{button.disabled=false;}
+};
+function scheduleSound(ctx,destination,voice,seconds){
+  const start=ctx.currentTime+.15,end=start+seconds;
+  if(voice){const source=ctx.createBufferSource();source.buffer=voice;const gain=ctx.createGain();gain.gain.value=.85;source.connect(gain).connect(destination);source.start(start+.15);}
+  if($('musicMode').value==='off')return;
+  const mix=ctx.createGain();mix.connect(destination);const quiet=voice?.025:.07;
+  mix.gain.setValueAtTime(0,start);mix.gain.linearRampToValueAtTime(quiet,start+.5);
+  if(voice&&voice.duration+.8<seconds-1){mix.gain.setValueAtTime(quiet,start+voice.duration+.4);mix.gain.linearRampToValueAtTime(.07,start+voice.duration+.8);}
+  mix.gain.setValueAtTime(voice&&voice.duration>seconds-2?quiet:.07,end-1);mix.gain.linearRampToValueAtTime(0,end);
+  const notes=[261.63,329.63,392,523.25,440,392,329.63,293.66];
+  for(let beat=0;beat*.4<seconds-.4;beat++){
+    const at=start+beat*.4,osc=ctx.createOscillator(),gain=ctx.createGain();osc.type='triangle';osc.frequency.value=notes[beat%notes.length];
+    gain.gain.setValueAtTime(0,at);gain.gain.linearRampToValueAtTime(.5,at+.02);gain.gain.exponentialRampToValueAtTime(.001,at+.34);
+    osc.connect(gain).connect(mix);osc.start(at);osc.stop(at+.36);
+    if(beat%4===0){const bass=ctx.createOscillator(),g=ctx.createGain();bass.frequency.value=notes[Math.floor(beat/4)%notes.length]/2;bass.type='sine';g.gain.setValueAtTime(.5,at);g.gain.exponentialRampToValueAtTime(.001,at+1.4);bass.connect(g).connect(mix);bass.start(at);bass.stop(Math.min(end,at+1.5));}
+  }
+}
+
 async function renderVideo(){
   if(recording)return;
   stopAdPreview();
   if(!$('creator').reportValidity())return;
   if(!imageURL){message('Envie uma foto antes de gerar o vídeo.');return;}
   if(!window.MediaRecorder||!HTMLCanvasElement.prototype.captureStream){message('Este navegador não oferece gravação de vídeo. Tente no Chrome ou Edge atualizado.');return;}
-  const type=['video/mp4;codecs=avc1.42E01E','video/mp4','video/webm;codecs=vp9','video/webm;codecs=vp8','video/webm'].find(t=>MediaRecorder.isTypeSupported(t));
+  const type=['video/mp4;codecs=avc1.42E01E,mp4a.40.2','video/mp4','video/webm;codecs=vp9,opus','video/webm;codecs=vp8,opus','video/webm'].find(t=>MediaRecorder.isTypeSupported(t));
   if(!type){message('Nenhum formato de gravação compatível foi encontrado.');return;}
   const image=new Image();image.src=imageURL;
   try{await image.decode();}catch{message('Não foi possível carregar a foto para gerar o vídeo.');return;}
   const data={product:$('product').value,benefit:$('benefit').value,price:$('price').value,cta:$('cta').value,style},seconds=Number($('duration').value);
   const canvas=document.createElement('canvas');canvas.width=1080;canvas.height=1920;const ctx=canvas.getContext('2d');
   if(!ctx){message('Não foi possível iniciar a área de renderização.');return;}
-  let recorder,stream,frame,timer,cancelled=false;const disabled=[];
+  let recorder,stream,frame,timer,audioContext,voiceBuffer,cancelled=false;const disabled=[];
   const status=text=>$('renderStatus').textContent=text;
   function stop(cancel){cancelled=cancel;cancelAnimationFrame(frame);clearTimeout(timer);if(recorder&&recorder.state!=='inactive')recorder.stop();}
   const hidden=()=>{if(document.hidden)stop(true);};
   try{
     recording=true;
+    $('voicePlayer').pause();
+    const wantsAudio=$('voiceMode').value!=='none'||$('musicMode').value!=='off';
+    if(wantsAudio){audioContext=new (window.AudioContext||window.webkitAudioContext)();await audioContext.resume();}
     for(const control of $('creator').querySelectorAll('input,select,textarea,button')){disabled.push([control,control.disabled]);control.disabled=true;}
+    abortRender=()=>{cancelled=true;status('Cancelamento solicitado…');};
     $('cancelRender').hidden=false;$('cancelRender').disabled=false;$('renderProgress').hidden=false;$('renderProgress').value=0;
     $('downloadVideo').hidden=true;$('renderResult').hidden=true;$('renderResult').pause();$('renderResult').removeAttribute('src');$('renderResult').load();
     if(downloadURL){URL.revokeObjectURL(downloadURL);downloadURL=null;}
-    paintVideo(ctx,image,data,0);stream=canvas.captureStream(30);recorder=new MediaRecorder(stream,{mimeType:type,videoBitsPerSecond:6000000});
+    status('Preparando voz e trilha…');
+    if(audioContext){const bytes=await narrationBytes();if(bytes){try{voiceBuffer=await audioContext.decodeAudioData(bytes.bytes);}catch{throw Error('Áudio de narração inválido ou não suportado. Use MP3 ou WAV.');}if(voiceBuffer.duration>seconds-.6)throw Error('A narração tem '+voiceBuffer.duration.toFixed(1)+' segundos. Encurte o texto ou escolha uma duração maior.');}}
+    if(cancelled||document.hidden)throw Error('Geração cancelada. Mantenha a aba visível.');
+    paintVideo(ctx,image,data,0);stream=canvas.captureStream(30);
+    let audioDestination;if(audioContext){audioDestination=audioContext.createMediaStreamDestination();audioDestination.stream.getAudioTracks().forEach(track=>stream.addTrack(track));}
+    recorder=new MediaRecorder(stream,{mimeType:type,videoBitsPerSecond:6000000});
     const chunks=[];const done=new Promise((resolve,reject)=>{recorder.ondataavailable=e=>{if(e.data.size)chunks.push(e.data);};recorder.onerror=()=>{cancelled=true;reject(Error('O navegador falhou ao gravar. Tente novamente com outros aplicativos fechados.'));};recorder.onstop=resolve;});
     abortRender=()=>stop(true);document.addEventListener('visibilitychange',hidden);
-    recorder.start(500);const start=performance.now();
+    recorder.start(500);if(audioContext)scheduleSound(audioContext,audioDestination,voiceBuffer,seconds);const start=performance.now();
     function draw(now){const progress=Math.min((now-start)/(seconds*1000),1);paintVideo(ctx,image,data,progress);$('renderProgress').value=Math.round(progress*100);status('Gerando '+Math.round(progress*100)+'% · mantenha esta aba visível.');frame=requestAnimationFrame(draw);}
     frame=requestAnimationFrame(draw);timer=setTimeout(()=>stop(false),seconds*1000);
     await done;
@@ -131,10 +180,11 @@ async function renderVideo(){
     downloadURL=URL.createObjectURL(blob);const extension=actualType.includes('mp4')?'mp4':'webm';
     $('renderResult').src=downloadURL;$('renderResult').hidden=false;
     $('downloadVideo').href=downloadURL;$('downloadVideo').download='elli-'+Date.now()+'.'+extension;$('downloadVideo').hidden=false;$('renderProgress').value=100;
-    status('Vídeo pronto · '+extension.toUpperCase()+' · 1080 × 1920 · sem áudio. Revise e baixe o arquivo. Nenhuma publicação foi feita.');
+    status('Vídeo pronto · '+extension.toUpperCase()+' · 1080 × 1920 · '+(audioContext?'com áudio':'sem áudio')+'. Revise e baixe o arquivo. Nenhuma publicação foi feita.');
   }catch(error){status(error.message||'Não foi possível gerar o vídeo.');}
   finally{
     cancelAnimationFrame(frame);clearTimeout(timer);document.removeEventListener('visibilitychange',hidden);
+    if(audioContext)await audioContext.close();
     if(recorder&&recorder.state!=='inactive')recorder.stop();if(stream)stream.getTracks().forEach(track=>track.stop());
     disabled.forEach(([control,value])=>control.disabled=value);$('cancelRender').hidden=true;abortRender=null;recording=false;
   }
